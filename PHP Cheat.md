@@ -1,5 +1,16 @@
 # PHP 語法速查表
 
+## 在單引號前面加上斜線(\\')
+
+我需要在所有的單引號 `'` 前加一個反斜線 `\`，使它們變成 `\'`，我如何能夠通過正則表達式來實現？
+
+我同樣希望能夠將 `"` 轉換成 `\"`，將 `\`轉換成 `\\`。
+
+函數 [addslashes()](http://php.net/manual/zh/function.addslashes.php)能夠實現這種操作。
+
+請參閱函數 [mysql_escape_string()](http://php.net/manual/zh/function.mysql-escape-string.php)。
+另外，還可以用函數 [stripslashes()](http://php.net/manual/zh/function.stripslashes.php)來去掉反斜線。
+
 ## JSON
 
 ### json_encode
