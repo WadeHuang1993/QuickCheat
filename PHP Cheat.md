@@ -8,8 +8,27 @@
 
 函數 [addslashes()](http://php.net/manual/zh/function.addslashes.php)能夠實現這種操作。
 
+```php
+<?php
+
+$str = "Is your name O'reilly?";
+
+// 輸出： Is your name O\'reilly?
+echo addslashes($str);
+
+$str = 'You should use "PHP" to develop web';
+
+// 輸出：You should use \"PHP\" to develop web
+echo addslashes($str);
+```
+
+使用 addslashes() 的例子是當你要往數據庫中輸入數據時。例如，將名字 O'reilly 插入到資料庫中，為了避免 SQL Injection 這就需要對`'`進行轉義。
+
+另外，防範 SQL Injection 強烈建議使用 DBMS 指定的轉義函數（比如 MySQL 是 mysqli_real_escape_string()，PostgreSQL 是 pg_escape_string()），但是如果你使用的 DBMS 沒有一個轉義函數，並且使用`\`來轉義特殊字符，你可以使用 addslashes() 函數。
+
 請參閱函數 [mysql_escape_string()](http://php.net/manual/zh/function.mysql-escape-string.php)。
-另外，還可以用函數 [stripslashes()](http://php.net/manual/zh/function.stripslashes.php)來去掉反斜線。
+
+最後，還可以用函數 [stripslashes()](http://php.net/manual/zh/function.stripslashes.php)來去掉反斜線。
 
 ## JSON
 
