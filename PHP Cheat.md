@@ -243,7 +243,7 @@ call_user_func_array (mixed callable , array 參數)
 function say($word){
     echo $word;
 }
-call_user_func_array('say',array('Hello PHP'));
+call_user_func_array('say', array('Hello PHP'));
 ```
 2.調用對像中的方法
 ```php
@@ -259,13 +259,13 @@ class S{
     }
 }
 /*使用方式一：無需實例化，調用類別的静态方法*/
-call_user_func_array(array('S','say1'),array('Hello PHP'));
+call_user_func_array(array('S', 'say1'), array('Hello PHP'));
 
 /*使用方式二：實例化後，調用類別的方法*/
 $s = new S();
 
-call_user_func_array(array($s,'say2'),array('Hello PHP'));
-call_user_func_array(array(new S(),'say2'),array('Hello PHP'));
+call_user_func_array(array($s, 'say2'), array('Hello PHP'));
+call_user_func_array(array(new S(), 'say2'), array('Hello PHP'));
 ```
 
 
