@@ -30,6 +30,43 @@ echo addslashes($str);
 
 最後，還可以用函數 [stripslashes()](http://php.net/manual/zh/function.stripslashes.php)來去掉反斜線。
 
+## Array
+
+### array_column
+
+array_column — 返回陣列中指定的一欄位（縱列）
+```php
+語法：
+$records = array(
+    array(
+        'id' => 2135,
+        'first_name' => 'John',
+        'last_name' => 'Doe',
+    ),
+    array(
+        'id' => 3245,
+        'first_name' => 'Sally',
+        'last_name' => 'Smith',
+    ),
+    array(
+        'id' => 5342,
+        'first_name' => 'Jane',
+        'last_name' => 'Jones',
+    )
+);
+
+$first_names = array_column($records, 'first_name');
+print_r($first_names);
+
+// output:
+/* Array
+(
+    [0] => John
+    [1] => Sally
+    [2] => Jane
+)
+*/
+ ```
 ## JSON
 
 ### json_encode
