@@ -31,11 +31,74 @@ echo addslashes($str);
 最後，還可以用函數 [stripslashes()](http://php.net/manual/zh/function.stripslashes.php)來去掉反斜線。
 
 ## Array
+### array_pop
+
+移除陣列最後一個元素，並回傳被移除的元素。
+
+#### 語法：
+```
+array_pop(&目標陣列)
+```
+#### 範例：
+```php
+$segment = array (
+  0 => 'admin',
+  1 => 'index',
+);
+
+$b = array_pop($segment);
+
+echo $b;
+
+// ouput: index
+
+print_r($segment);
+
+// output:
+/* 
+Array
+(
+    [0] => admin
+)
+*/
+```
+
+### array_shift
+
+移除陣列第一個元素，並回傳被移除的元素。
+
+#### 語法：
+```
+array_shift(&目標陣列)
+```
+#### 範例：
+
+```php
+$segment = array (
+  0 => 'admin',
+  1 => 'index',
+);
+
+$b = array_shift($segment);
+
+echo $b;
+
+// ouput: admin
+
+print_r($segment);
+
+// output:
+/* 
+Array
+(
+    [0] => index
+)
+*/
+```
 
 ### array_column
 
 array_column — 返回陣列中指定的一欄位（縱列）
-
 
 #### 語法：
 ```
