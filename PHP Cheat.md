@@ -228,3 +228,44 @@ array(5) {
 }
 ```
 
+## 特殊
+### call_user_func_array
+
+主要用在函數名不確定，參數不確定的情況下，PHP 提供的一種通過傳遞不同參數來調用不同方法的工具。
+
+#### 語法：
+```
+call_user_func_array (mixed callable , array 參數)
+```
+#### 範例：
+1.直接調用方法
+```php
+function say($word){
+    echo $word;
+}
+call_user_func_array('say',array('Hello PHP'));
+```
+2.調用對像中的方法
+```php
+class S{
+    public function __construct(){
+        
+    }
+    public static function say1($word){
+        echo $word;
+    }
+    public function say($word){
+        echo $word;
+    }
+}
+/*使用方式一：無需實例化，調用類別的静态方法*/
+call_user_func_array(array('S','say1'),array('Hello PHP'));
+
+/*使用方式二：實例化後，調用類別的方法*/
+$s = new S();
+
+call_user_func_array(array($s,'say2'),array('Hello PHP'));
+call_user_func_array(array(new S(),'say2'),array('Hello PHP'));
+```
+
+
