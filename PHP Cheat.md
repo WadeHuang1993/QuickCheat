@@ -35,8 +35,14 @@ echo addslashes($str);
 ### array_column
 
 array_column — 返回陣列中指定的一欄位（縱列）
+
+
+#### 語法：
+```
+array_column(目標陣列, 欄位名稱)
+```
+#### 範例：
 ```php
-語法：
 $records = array(
     array(
         'id' => 2135,
@@ -66,6 +72,43 @@ print_r($first_names);
     [2] => Jane
 )
 */
+ ```
+ 
+ ### array_slice
+ 
+ 依照指定的索引與長度取得陣列內容物。
+ 
+ #### 語法：
+ ```
+ array_slice(目標陣列, 起始索引, 保留長度);
+ ```
+ #### 範例：
+ ```php
+$segments = array (
+    0 => '_sub',
+    1 => 'admin',
+    2 => 'common',
+    3 => 'news',
+);
+
+$a = array_slice($segments, 3); // 取得前三個元素之後的元素
+// output:
+/*
+array (
+  0 => 'news',
+)
+*/
+
+$b = array_slice($segments, 1, 2); // 取得從第一個所引算起的兩個元素
+// output:
+/*
+array (
+  0 => 'admin',
+  1 => 'common',
+)
+*/
+
+
  ```
 ## JSON
 
